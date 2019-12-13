@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="{{ asset('adminLTE/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<!-- DataTables -->
+<!-- <link rel="stylesheet" href="{{ asset('adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}"> -->
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -704,25 +707,7 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+
 
     <!-- Main content -->
 @yield('content')
@@ -743,8 +728,11 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
+<!-- DataTables -->
 <script src="{{ asset('adminLTE/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('adminLTE/plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{ asset('adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<!-- jQuery -->
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('adminLTE/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -777,5 +765,13 @@
 <script src="{{ asset('adminLTE/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('adminLTE/dist/js/demo.js')}}"></script>
+
+
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+  });
+</script>
 </body>
 </html>
