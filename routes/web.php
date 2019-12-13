@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');
 Route::get('/tabel', 'DashboardController@tabel');
+Route::get('/form', 'DashboardController@form');

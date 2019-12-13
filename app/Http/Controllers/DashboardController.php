@@ -18,4 +18,7 @@ class DashboardController extends Controller
     public function tabel(){
         return view('/admin/tabel');
     }
+    public function form(){
+        return view('/admin/form');
+    }
 }

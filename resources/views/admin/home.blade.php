@@ -366,7 +366,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{url('/')}}/form" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>General Elements</p>
                 </a>
@@ -765,13 +765,17 @@
 <script src="{{ asset('adminLTE/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('adminLTE/dist/js/demo.js')}}"></script>
-
-
+<!-- bs-custom-file-input -->
+<script src="{{ asset('adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <!-- page script -->
 <script>
   $(function () {
     $("#example1").DataTable();
   });
 </script>
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
 </body>
 </html>
