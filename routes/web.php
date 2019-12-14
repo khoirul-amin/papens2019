@@ -12,8 +12,24 @@
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return view('landing/home');
 });
+Route::get('/services', function () {
+    return view('landing/services');
+});
+Route::get('/projects', function () {
+    return view('landing/projects');
+});
+Route::get('/about', function () {
+    return view('landing/about');
+});
+Route::get('/blog', function () {
+    return view('landing/blog');
+});
+Route::get('/contact', function () {
+    return view('landing/contact');
+});
+
 
 Auth::routes();
 
@@ -21,3 +37,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');
 Route::get('/tabel', 'DashboardController@tabel');
 Route::get('/form', 'DashboardController@form');
+
