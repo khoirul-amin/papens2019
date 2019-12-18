@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('landing/home');
 });
+Route::get('/loginguru', function () {
+    return view('loginguru');
+});
 Route::get('/services', function () {
     return view('landing/services');
 });
@@ -38,3 +41,5 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/tabel', 'DashboardController@tabel');
 Route::get('/form', 'DashboardController@form');
 
+Route::get('/guru', 'GuruController@index');
+Route::get('/guru/get_datatable', 'GuruController@get_datatable');

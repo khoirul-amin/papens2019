@@ -173,7 +173,7 @@
           <img src="{{asset('/adminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -182,7 +182,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
+          <!-- <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -210,6 +210,15 @@
                 </a>
               </li>
             </ul>
+          </li> -->
+          
+          <li class="nav-item">
+            <a href="/guru" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Data Guru
+              </p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
@@ -732,6 +741,16 @@
 <script src="{{ asset('adminLTE/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{ asset('adminLTE/plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{ asset('adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+  <script>
+    $("#tabelGuru").DataTable({
+        lengthMenu: [[10, 50, 200, 1000], [10, 50, 200, 1000]],
+        ajax:{
+            url: "guru/get_datatable",
+            type: "GET",
+            cache: false,
+        },
+    });
+  </script>
 <!-- jQuery -->
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('adminLTE/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -769,13 +788,9 @@
 <script src="{{ asset('adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <!-- page script -->
 <script>
-  $(function () {
-    $("#example1").DataTable();
-  });
-</script>
-<script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
+</script>
 </body>
 </html>
